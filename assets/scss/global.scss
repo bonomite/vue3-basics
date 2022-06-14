@@ -1,0 +1,68 @@
+$maxWidth: 1440px;
+$contentWidth: 1024px;
+$thinContentWidth: 768px;
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--white);
+  color: var(--text-color);
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body.overlay-is-active {
+  overflow: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+// hide outline when using a mouse but not when using a keyboard
+// https://github.com/WICG/focus-visible
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+a.nuxt-link {
+  text-decoration: none;
+}
+
+.thin-content-width {
+  max-width: $thinContentWidth !important;
+  margin: 0 auto;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  .content {
+    width: 100%;
+    max-width: $contentWidth;
+    padding: 5rem 3rem;
+    &.max-width {
+      max-width: $maxWidth;
+    }
+  }
+}
+
+// style-mode over rides
+[data-style-mode='blue'] {
+  --text-color: var(--white100);
+  --text-color-secondary: var(--white300);
+}
