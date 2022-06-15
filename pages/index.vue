@@ -1,4 +1,7 @@
 <script setup>
+import { ref } from 'vue'
+import data from '~/utilities/data.js'
+
 const {
   data: movies,
   pending,
@@ -8,6 +11,9 @@ const {
 )
 console.log('movies', movies.value)
 // console.log('title', movie.value.title)
+
+const datajs = ref(data)
+console.log('datajs', datajs._value)
 </script>
 
 <template>
