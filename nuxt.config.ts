@@ -38,5 +38,10 @@ export default defineNuxtConfig({
             'primevue',
         ]
     },
+    runtimeConfig: {
+        public: {
+            ENV_KEY: process.env['ENV_KEY'],
+        }
+    }
 
 })
