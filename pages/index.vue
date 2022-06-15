@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import data from '~/utilities/data.js'
 
 const {
@@ -14,6 +14,13 @@ console.log('movies', movies.value)
 
 const datajs = ref(data)
 console.log('datajs', datajs._value)
+
+onMounted(() => {
+  console.log('mounted')
+})
+onUnmounted(() => {
+  console.log('unmounted')
+})
 </script>
 
 <template>
